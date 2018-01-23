@@ -6,7 +6,7 @@
 /*   By: pzhang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/19 16:41:24 by pzhang            #+#    #+#             */
-/*   Updated: 2018/01/19 16:41:47 by pzhang           ###   ########.fr       */
+/*   Updated: 2018/01/22 18:03:38 by pzhang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	helper(t_data *data, wchar_t c)
 	else
 	{
 		while ((data->fw)[1] > i++)
-			ft_putchar (' ');
+			ft_putchar(' ');
 		putwchar(c);
 	}
 	return ((data->fw)[1]);

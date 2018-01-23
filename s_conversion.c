@@ -6,7 +6,7 @@
 /*   By: pzhang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 12:55:06 by pzhang            #+#    #+#             */
-/*   Updated: 2018/01/22 16:41:51 by pzhang           ###   ########.fr       */
+/*   Updated: 2018/01/22 18:07:01 by pzhang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int		print_str_help(char *str, t_data *data, int len, int check)
 	}
 	ft_putstr(str);
 	free(str);
-	return(i + len);
+	return (i + len);
 }
 
 static int		print_str(char *str, t_data *data, int i, int len)
@@ -40,7 +40,7 @@ static int		print_str(char *str, t_data *data, int i, int len)
 	{
 		ft_putstr(str);
 		free(str);
-		return(len);
+		return (len);
 	}
 	if (flag_check(data->f, '-') == 1)
 	{

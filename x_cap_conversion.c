@@ -6,7 +6,7 @@
 /*   By: pzhang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/19 16:43:50 by pzhang            #+#    #+#             */
-/*   Updated: 2018/01/22 14:58:38 by pzhang           ###   ########.fr       */
+/*   Updated: 2018/01/22 18:05:30 by pzhang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,8 @@ int							x_cap_conversion(t_data *data, va_list ap)
 		print_pad(data, pad, 1);
 	}
 	else
-	{		
-		if (flag_check(data->f, '0') == 1 && (data->p)[0] == 0 && 
+	{
+		if (flag_check(data->f, '0') == 1 && (data->p)[0] == 0 &&
 				flag_check(data->f, '#') == 1 && num != 0)
 			ft_putstr("0X");
 		print_pad(data, pad, 0);

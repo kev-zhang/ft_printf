@@ -6,7 +6,7 @@
 /*   By: pzhang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 14:15:38 by pzhang            #+#    #+#             */
-/*   Updated: 2018/01/22 16:05:43 by pzhang           ###   ########.fr       */
+/*   Updated: 2018/01/22 18:39:50 by pzhang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 typedef struct	s_data
 {
-	char		c; //conversion
-	char		f[5]; //flag(s)
-	int			fw[2]; //min field-width, [0] is checker, [1] is value
-	int			p[2]; //precision, [0] is checker, [1] is value
-	char		lm[2]; //length modifier
+	char		c;
+	char		f[5];
+	int			fw[2];
+	int			p[2];
+	char		lm[2];
 }				t_data;
 
 int				ft_printf(const char *str, ...);
@@ -49,5 +49,6 @@ int				c_conversion(t_data *data, va_list ap);
 int				lc_conversion(t_data *data, va_list ap);
 int				p_conversion(t_data *data, va_list ap);
 int				perc_conversion(t_data *data);
+int				none_conversion(t_data *data);
 
 #endif
