@@ -6,7 +6,7 @@
 /*   By: pzhang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/19 14:27:53 by pzhang            #+#    #+#             */
-/*   Updated: 2018/01/22 17:20:01 by pzhang           ###   ########.fr       */
+/*   Updated: 2018/01/24 14:06:48 by pzhang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,47 @@ static void	print_pad(int pad)
 	}
 }
 
+static int	print_zero(int *p)
+{
+	int i;
+
+	i = 0;
+	ft_putstr("0x");
+	if (p[0] == 1)
+	{
+		while (i < p[1])
+		{
+			ft_putchar('0');
+			i++;
+		}
+	}
+	else
+	{
+		ft_putchar('0');
+		i++;
+	}
+	return (2 + i);
+}
+
 static int	helper(t_data *data)
 {
 	int	pad;
+	int	ret;
 
 	pad = 0;
 	if ((data->fw)[0] == 1 && (data->fw)[1] > 3)
 		pad = (data->fw)[1] - 3;
 	if (flag_check(data->f, '-') == 1)
 	{
-		ft_putstr("0x0");
+		ret = print_zero(data->p);
 		print_pad(pad);
 	}
 	else
 	{
 		print_pad(pad);
-		ft_putstr("0x0");
+		ret = print_zero(data->p);
 	}
-	return (3 + pad);
+	return (ret + pad);
 }
 
 int			p_conversion(t_data *data, va_list ap)
@@ -55,8 +78,6 @@ int			p_conversion(t_data *data, va_list ap)
 		return (helper(data));
 	}
 	set_flag(data, '#');
-	(data->p)[0] = 0;
-	(data->p)[1] = 0;
 	(data->lm)[0] = 'l';
 	(data->lm)[1] = '\0';
 	return (ux_conversion(data, ap, 16));

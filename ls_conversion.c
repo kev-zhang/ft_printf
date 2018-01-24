@@ -6,7 +6,7 @@
 /*   By: pzhang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/19 16:42:01 by pzhang            #+#    #+#             */
-/*   Updated: 2018/01/22 18:06:06 by pzhang           ###   ########.fr       */
+/*   Updated: 2018/01/24 14:14:11 by pzhang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,20 @@ int			ls_conversion(t_data *data, va_list ap)
 {
 	wchar_t	*str;
 	int		i;
+	char	str_null[7];
 
 	str = va_arg(ap, wchar_t*);
+	if (str == NULL)
+	{
+		str_null[0] = '(';
+		str_null[1] = 'n';
+		str_null[2] = 'u';
+		str_null[3] = 'l';
+		str_null[4] = 'l';
+		str_null[5] = ')';
+		str_null[6] = '\0';
+		return (empty_str(data, str_null));
+	}
 	i = strlen_w(str, data->p);
 	if ((data->fw)[0] == 1 && (data->fw)[1] > i)
 		return (helper(data, str, i));
